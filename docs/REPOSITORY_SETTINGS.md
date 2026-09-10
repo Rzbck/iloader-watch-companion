@@ -1,53 +1,54 @@
 # Repository settings
 
-These settings are part of the intended public-repository configuration.
+Repository administration was applied and checked on 2026-09-10.
 
-## Repository presentation
+## Verified repository presentation
 
 - visibility: public
 - default branch: `main`
 - issues: enabled
 - wiki: disabled
-- projects: disabled unless a real project board becomes useful
+- projects: disabled
 - delete merged branches automatically: enabled
 - allow updating out-of-date PR branches: enabled
+- license detected by GitHub: MIT
 
-Recommended topics:
+Topics:
 
-- `apple-watch`
-- `watchos`
-- `ios`
-- `sideloading`
-- `iloader`
-- `isideload`
-- `windows`
 - `apple`
+- `apple-watch`
+- `iloader`
+- `ios`
+- `isideload`
+- `sideloading`
+- `watchos`
+- `windows`
 
-## Merge policy
-
-For this documentation/integration repository:
+## Verified merge policy
 
 - squash merge: enabled
 - rebase merge: enabled
 - merge commits: disabled
-- auto-merge: optional; keep disabled until there is a reason to use it
+- auto-merge: disabled
 
 No required status-check rule is defined yet because this repository currently contains documentation rather than executable source/CI. Revisit branch rules if code or automated checks are added here later.
 
-## Security settings
+## Security configuration
 
-For a public repository, enable when available:
+The owner CLI configuration command completed successfully for:
 
 - secret scanning;
 - secret scanning push protection;
-- vulnerability/dependency alerts;
+- vulnerability alerts;
 - private vulnerability reporting.
 
-`SECURITY.md` assumes private vulnerability reporting will be enabled when possible.
+The public repository metadata independently confirms the repository/merge/topic settings above. The connected GitHub API used by this project cannot read back the private-vulnerability-reporting endpoint, so preserve the successful owner-CLI result as the configuration evidence unless a later GitHub check shows otherwise.
 
-## GitHub CLI configuration
+`SECURITY.md` remains the public disclosure policy and must be kept consistent with the repository security settings.
 
-Run from an authenticated GitHub CLI session with repository admin permission:
+## Reconfiguration command
+
+If repository administration needs to be restored or audited from an authenticated owner CLI session:
 
 ```powershell
 & {
@@ -92,4 +93,4 @@ Run from an authenticated GitHub CLI session with repository admin permission:
 }
 ```
 
-If a security feature is unavailable for the account/repository, record the exact GitHub error instead of assuming it is enabled.
+Never claim a later security-setting change succeeded unless the command/API operation actually succeeds.
