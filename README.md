@@ -53,6 +53,7 @@ The historical feature branches are **regression branches, not PR branches**. Th
 - [Compatibility and validation](docs/COMPATIBILITY.md)
 - [Testing](docs/TESTING.md)
 - [Upstream contribution plan](docs/UPSTREAM.md)
+- [Repository settings](docs/REPOSITORY_SETTINGS.md)
 - [Security policy](SECURITY.md)
 - [Support](SUPPORT.md)
 - [Contributing](CONTRIBUTING.md)
