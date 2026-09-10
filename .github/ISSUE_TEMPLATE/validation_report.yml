@@ -1,0 +1,70 @@
+name: Compatibility / validation report
+description: Add sanitized evidence from a real iPhone + Apple Watch test.
+title: "[Validation] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this form for real-device compatibility evidence. Never publish UDIDs, Apple account data, certificates, provisioning profiles, pairing records, or personal Health/GPS data.
+  - type: input
+    id: iloader_revision
+    attributes:
+      label: iLoader revision
+      description: Exact commit SHA used.
+    validations:
+      required: true
+  - type: input
+    id: isideload_revision
+    attributes:
+      label: isideload revision
+      description: Exact commit SHA used.
+    validations:
+      required: true
+  - type: input
+    id: host_os
+    attributes:
+      label: Host OS
+      placeholder: Windows 11 24H2
+    validations:
+      required: true
+  - type: input
+    id: ios
+    attributes:
+      label: iOS version
+    validations:
+      required: true
+  - type: input
+    id: watchos
+    attributes:
+      label: watchOS version
+    validations:
+      required: true
+  - type: input
+    id: topology
+    attributes:
+      label: IPA topology / capability class
+      description: Keep this generic, for example "iPhone host + embedded Watch app, HealthKit".
+    validations:
+      required: true
+  - type: checkboxes
+    id: results
+    attributes:
+      label: Observed result
+      options:
+        - label: iPhone host installed
+        - label: iPhone host launched
+        - label: Watch companion installed completely
+        - label: Watch companion launched
+        - label: Required capability remained functional
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes
+      description: Add only sanitized observations useful for compatibility analysis.
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: Privacy check
+      options:
+        - label: I removed credentials, provisioning/signing material, pairing data, real device identifiers, and personal application data.
+          required: true
