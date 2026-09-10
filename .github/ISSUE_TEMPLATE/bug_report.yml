@@ -1,0 +1,75 @@
+name: Bug report
+description: Report a reproducible regression or failure in the Apple Watch companion path.
+title: "[Bug] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Do not include Apple credentials, certificates, provisioning profiles, pairing records, real UDIDs, or personal application data. Use SECURITY.md for sensitive reports.
+  - type: input
+    id: iloader_revision
+    attributes:
+      label: iLoader revision
+      description: Exact commit SHA or branch used.
+      placeholder: 70f37e9b4afc659ab44ec1944c034093f4cda416
+    validations:
+      required: true
+  - type: input
+    id: isideload_revision
+    attributes:
+      label: isideload revision
+      description: Exact commit SHA or branch used.
+      placeholder: f7b9f3da570edd6824c29680545e710846d07df5
+    validations:
+      required: true
+  - type: dropdown
+    id: stage
+    attributes:
+      label: Failing stage
+      options:
+        - Nested bundle discovery
+        - Identifier rewriting
+        - App ID / provisioning
+        - Watch signing
+        - iPhone installation
+        - Companion transport
+        - Watch installation / integrity
+        - Watch launch
+        - Capability behavior
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Host OS, iOS/watchOS versions, and relevant capability class. Do not include UDIDs or account identifiers.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Reproduction steps
+      description: Minimal steps that reproduce the problem.
+    validations:
+      required: true
+  - type: textarea
+    id: observed
+    attributes:
+      label: Observed result
+      description: What happened, including a sanitized error excerpt if useful.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected result
+    validations:
+      required: true
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: Privacy check
+      options:
+        - label: I removed credentials, signing/provisioning material, pairing data, real device identifiers, and personal application data.
+          required: true
