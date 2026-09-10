@@ -126,6 +126,28 @@ Never commit:
 
 Use generic examples such as `com.example.host` and `com.example.host.watchkitapp`.
 
+## Current upstream review candidate — isideload
+
+A clean PR candidate has now been prepared separately from the regression branch.
+
+- upstream target repository: `nab138/isideload`
+- upstream target branch: `apple-codesign-quick`
+- upstream base SHA verified immediately before PR preparation: `2dd6efe864e744aa3aea9d795e2554dc4d8df744`
+- fork PR branch: `Rzbck/isideload:pr-watch-companion-support-20260910`
+- PR source SHA: `a45cf32614df9a0a26de8c1bb0a5a8c236f2d479`
+- commit count above base: 1
+- functional diff: 10 files; no HANDOFF, README, workflow, application-specific files, or historical debug documentation
+- HealthKit-specific capability workaround intentionally removed from the PR candidate so the upstream review stays scoped to generic Watch companion support
+- exact PR-branch build run: `34476518691` — SUCCESS on Ubuntu, Windows, and macOS
+- validation-only branch: `validation-watch-companion-tests-20260910`
+- validation workflow run: `34476596256` — SUCCESS; `cargo test -p isideload --lib` and build succeeded on Ubuntu, Windows, and macOS
+- audit: no ChatGPT/OpenAI/AI attribution, Watch Tracker bundle IDs, personal paths, Health/GPS data, UDIDs, credentials, or provisioning material in the PR diff
+- upstream history search found no existing PR or commit matching Apple Watch/watchOS/companion support at this checkpoint
+
+Physical validation belongs to the historical regression pair, not to `a45cf326...` itself. The regression pair is a superset that also included HealthKit capability handling. The PR description must preserve that distinction.
+
+An attempt to create the cross-repository Draft PR through the connected GitHub integration returned `403 Resource not accessible by integration`. This is a connector permission limitation on the upstream repository, not a source/CI failure. The repository owner must create the Draft PR through their authenticated GitHub CLI session using the already-prepared branch and description. After creation, record the upstream PR number/URL here and in issue `#1`.
+
 ## Current public documentation
 
 Read before changing the project:
@@ -148,20 +170,13 @@ Read before changing the project:
 
 ## Next exact step
 
-Work from public tracking issue `#1` and prepare the **isideload upstream review first**:
-
-1. verify current `nab138/isideload` and `Rzbck/isideload` refs before changing code;
-2. preserve `f7b9f3da...` as the physical regression anchor;
-3. create a fresh cleanup/review branch from the relevant current upstream base;
-4. port only the Watch-specific behavior needed for the validated path;
-5. exclude historical HANDOFF/debug-only files and unrelated dependency/auth/certificate changes unless proven necessary;
-6. add/retain focused tests;
-7. run exact-SHA tests/CI;
-8. inspect the final diff for secrets/private identifiers;
-9. compare behavior back to the known-good anchor where practical;
-10. open a draft PR to `nab138/isideload`;
-11. handle maintainer review without merging unless explicitly approved;
-12. only after the backend review shape is stable, prepare the matching iLoader draft PR.
+1. Create the Draft PR from `Rzbck:isideload/pr-watch-companion-support-20260910` to `nab138/isideload:apple-codesign-quick` using the authenticated owner GitHub CLI session.
+2. Verify the resulting PR is draft, base is `apple-codesign-quick`, head is `Rzbck:pr-watch-companion-support-20260910`, and source SHA is `a45cf326...`.
+3. Verify the upstream pull-request CI/checks and inspect the published diff.
+4. Record the PR number/URL in this HANDOFF and issue `#1`.
+5. Handle maintainer review without merging unless explicitly approved.
+6. Keep the HealthKit capability workaround outside this Watch-support PR unless the maintainer explicitly asks for it.
+7. Only after the backend review shape is stable, prepare the matching iLoader draft PR.
 
 ## Do not do automatically
 
