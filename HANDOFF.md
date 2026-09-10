@@ -44,8 +44,8 @@ Do not claim those settings are enabled until the CLI/API command succeeds and t
 - regression branch: `feat/watch-companion-support-20260909`
 - physically used source anchor: `f7b9f3da570edd6824c29680545e710846d07df5`
 - CI run for anchor: `34436382782` — SUCCESS
-- current regression-branch HEAD at this checkpoint: `5fdc15fa10de927b9fcd962eba4f97bb46e3e44e`
-- commits after `f7b9f3da...` are documentation-only at this checkpoint
+- current regression-branch HEAD at this checkpoint: `a38f3942adb89347fa3ba346aa7b0b79b72a3b86`
+- all commits after `f7b9f3da...` are documentation-only at this checkpoint
 - owns: nested bundle discovery, App ID/profile handling, dependent identifier rewriting, capability-aware provisioning, Watch-target provisioning, nested Watch signing, paired-Watch install backend
 
 ### iLoader
@@ -54,8 +54,8 @@ Do not claim those settings are enabled until the CLI/API command succeeds and t
 - regression branch: `feat/watch-companion-support-20260909`
 - physically validated source anchor: `70f37e9b4afc659ab44ec1944c034093f4cda416`
 - CI run for anchor: `34436587217` — SUCCESS
-- current regression-branch HEAD at this checkpoint: `cd5d1dc55824d4f6929675b445cc7e533e96d8e5`
-- commits after `70f37e9b...` are documentation-only at this checkpoint
+- current regression-branch HEAD at this checkpoint: `fc05ca74e40ec70d33bfa6307c61f7f9e5145a66`
+- all commits after `70f37e9b...` are documentation-only at this checkpoint
 - owns: desktop integration, selected usbmux transport preservation, backend pin/integration, companion-device installation path
 
 Always distinguish current branch HEAD from the exact physically validated source anchors above.
