@@ -16,6 +16,19 @@ Maintain a clean public entry point for the physically validated Apple Watch com
 - public tracking issue: `#1` — `Prepare clean upstream Watch companion contribution`
 - this repository must not contain Watch Tracker application code or personal test data
 
+## Repository administration state
+
+Content/community files are in place. The remaining repository-level admin settings that require an authenticated owner CLI/session are documented in `docs/REPOSITORY_SETTINGS.md`:
+
+- topics;
+- secret scanning;
+- push protection;
+- vulnerability alerts;
+- private vulnerability reporting;
+- merge-policy cleanup and automatic merged-branch deletion.
+
+Do not claim those settings are enabled until the CLI/API command succeeds and the resulting repository state is rechecked.
+
 ## Upstream projects
 
 - official iLoader: `nab138/iloader`
@@ -113,26 +126,27 @@ Read before changing the project:
 - `docs/COMPATIBILITY.md`
 - `docs/TESTING.md`
 - `docs/UPSTREAM.md`
+- `docs/REPOSITORY_SETTINGS.md`
 - `.github/PULL_REQUEST_TEMPLATE.md`
 - `.github/ISSUE_TEMPLATE/bug_report.yml`
 - `.github/ISSUE_TEMPLATE/validation_report.yml`
 
 ## Next exact step
 
-Work from public tracking issue `#1` and prepare the **isideload upstream review first**:
-
-1. verify current `nab138/isideload` and `Rzbck/isideload` refs before changing code;
-2. read the fork's public-review HANDOFF/porting notes plus `docs/IMPLEMENTATION_MAP.md` here;
-3. preserve `f7b9f3da...` as the physical regression anchor;
-4. create a new review branch from the relevant current upstream base;
-5. port only the Watch-specific behavior needed for the validated path;
-6. exclude historical HANDOFF/debug-only files and unrelated dependency/auth/certificate changes unless proven necessary;
-7. add/retain focused tests;
-8. run exact-SHA tests/CI;
-9. inspect the final diff for secrets/private identifiers;
-10. open a draft PR to `nab138/isideload`;
-11. handle maintainer review without merging unless explicitly approved;
-12. only after the backend review shape is stable, prepare the matching iLoader draft PR.
+1. Finish/verify the repository-level admin settings from `docs/REPOSITORY_SETTINGS.md`.
+2. Recheck the public repository state and security features.
+3. Work from public tracking issue `#1` and prepare the **isideload upstream review first**:
+   - verify current `nab138/isideload` and `Rzbck/isideload` refs before changing code;
+   - preserve `f7b9f3da...` as the physical regression anchor;
+   - create a new review branch from the relevant current upstream base;
+   - port only the Watch-specific behavior needed for the validated path;
+   - exclude historical HANDOFF/debug-only files and unrelated dependency/auth/certificate changes unless proven necessary;
+   - add/retain focused tests;
+   - run exact-SHA tests/CI;
+   - inspect the final diff for secrets/private identifiers;
+   - open a draft PR to `nab138/isideload`;
+   - handle maintainer review without merging unless explicitly approved.
+4. Only after the backend review shape is stable, prepare the matching iLoader draft PR.
 
 ## Do not do automatically
 
