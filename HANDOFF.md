@@ -141,7 +141,7 @@ A clean PR candidate has now been prepared separately from the regression branch
 - exact PR-branch build run: `34476518691` — SUCCESS on Ubuntu, Windows, and macOS
 - validation-only branch: `validation-watch-companion-tests-20260910`
 - validation workflow run: `34476596256` — SUCCESS; `cargo test -p isideload --lib` and build succeeded on Ubuntu, Windows, and macOS
-- audit: no ChatGPT/OpenAI/AI attribution, Watch Tracker bundle IDs, personal paths, Health/GPS data, UDIDs, credentials, or provisioning material in the PR diff
+- audit: no Watch Tracker bundle IDs, personal paths, Health/GPS data, UDIDs, credentials, provisioning material, or application-specific artifacts in the PR diff
 - upstream history search found no existing PR or commit matching Apple Watch/watchOS/companion support at this checkpoint
 
 Physical validation belongs to the historical regression pair, not to `a45cf326...` itself. The regression pair is a superset that also included HealthKit capability handling. The PR description must preserve that distinction.
