@@ -13,6 +13,7 @@ Maintain a clean public entry point for the physically validated Apple Watch com
 - default branch: `main`
 - language: English
 - purpose: architecture, compatibility, validation, security, contribution guidance, and upstream-review coordination
+- public tracking issue: `#1` — `Prepare clean upstream Watch companion contribution`
 - this repository must not contain Watch Tracker application code or personal test data
 
 ## Upstream projects
@@ -118,7 +119,7 @@ Read before changing the project:
 
 ## Next exact step
 
-Prepare the **isideload upstream review first**:
+Work from public tracking issue `#1` and prepare the **isideload upstream review first**:
 
 1. verify current `nab138/isideload` and `Rzbck/isideload` refs before changing code;
 2. read the fork's public-review HANDOFF/porting notes plus `docs/IMPLEMENTATION_MAP.md` here;
