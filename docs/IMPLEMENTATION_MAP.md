@@ -7,11 +7,11 @@ This document maps the physically validated result to the two source repositorie
 ### iLoader
 
 - fork: `Rzbck/iloader`
-- feature branch: `feat/watch-companion-support-20260909`
+- regression branch: `feat/watch-companion-support-20260909`
 - physically validated source revision: `70f37e9b4afc659ab44ec1944c034093f4cda416`
 - CI run: `34436587217` — `SUCCESS`
-- current feature-branch HEAD at the time of this document: `cd5d1dc55824d4f6929675b445cc7e533e96d8e5`
-- commits after the validated source revision are documentation-only at this checkpoint.
+- current regression-branch HEAD at this checkpoint: `fc05ca74e40ec70d33bfa6307c61f7f9e5145a66`
+- all commits after the validated source revision are documentation-only at this checkpoint.
 
 Primary implementation ownership visible in the validated branch includes:
 
@@ -24,11 +24,11 @@ The historical HANDOFF files are regression/debug documentation and are not inte
 ### isideload
 
 - fork: `Rzbck/isideload`
-- feature branch: `feat/watch-companion-support-20260909`
+- regression branch: `feat/watch-companion-support-20260909`
 - physically used source revision: `f7b9f3da570edd6824c29680545e710846d07df5`
 - CI run: `34436382782` — `SUCCESS`
-- current feature-branch HEAD at the time of this document: `5fdc15fa10de927b9fcd962eba4f97bb46e3e44e`
-- commits after the validated source revision are documentation-only at this checkpoint.
+- current regression-branch HEAD at this checkpoint: `a38f3942adb89347fa3ba346aa7b0b79b72a3b86`
+- all commits after the validated source revision are documentation-only at this checkpoint.
 
 Watch-related implementation areas in the historical branch include:
 
