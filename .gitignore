@@ -1,0 +1,31 @@
+# Local logs and diagnostics
+*.log
+logs/
+
+# Apple signing / provisioning material
+*.mobileprovision
+*.p12
+*.pfx
+*.pem
+*.key
+*.cer
+*.crt
+keys/
+certs/
+profiles/
+
+# Local secrets / environment
+.env
+.env.*
+*.local
+
+# Pairing material
+*.pairing
+*.plist.private
+pairing/
+
+# OS/editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
