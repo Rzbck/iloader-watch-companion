@@ -13,6 +13,11 @@ Known-good regression anchors:
 - iLoader: `70f37e9b4afc659ab44ec1944c034093f4cda416`
 - isideload: `f7b9f3da570edd6824c29680545e710846d07df5`
 
+Both anchor SHAs also have successful GitHub Actions builds:
+
+- iLoader run `34436587217`
+- isideload run `34436382782`
+
 The validated flow installed and launched both the iPhone host app and the embedded Watch companion. This does **not** imply universal compatibility with every iOS/watchOS version, device model, entitlement, IPA topology, or signing configuration.
 
 ## What was added
@@ -39,14 +44,19 @@ The implementation remains in the repositories that own each responsibility:
 
 This repository intentionally does **not** vendor complete copies of those projects. It is the clean public entry point for architecture, validation, security guidance, and upstream review status.
 
+The historical feature branches are **regression branches, not PR branches**. They preserve the experiments and physical-validation path that produced the working result. Upstream contributions will be prepared on fresh cleanup/review branches based on the relevant current upstream base. See [Implementation map](docs/IMPLEMENTATION_MAP.md).
+
 ## Documentation
 
 - [Architecture](docs/ARCHITECTURE.md)
+- [Implementation map](docs/IMPLEMENTATION_MAP.md)
 - [Compatibility and validation](docs/COMPATIBILITY.md)
 - [Testing](docs/TESTING.md)
 - [Upstream contribution plan](docs/UPSTREAM.md)
 - [Security policy](SECURITY.md)
+- [Support](SUPPORT.md)
 - [Contributing](CONTRIBUTING.md)
+- [Code of conduct](CODE_OF_CONDUCT.md)
 - [Attribution and trademark notice](NOTICE.md)
 - [Project handoff](HANDOFF.md)
 
@@ -54,12 +64,13 @@ This repository intentionally does **not** vendor complete copies of those proje
 
 The intended contribution sequence is:
 
-1. reduce the `isideload` changes to a clean, generic patch;
-2. run its tests/CI and preserve the known-good hardware regression anchor;
-3. open a draft PR against `nab138/isideload`;
-4. incorporate maintainer review;
-5. clean the smaller iLoader integration against the backend shape under review;
-6. open the matching draft PR against `nab138/iloader`.
+1. create a fresh review branch from the relevant current `nab138/isideload` base;
+2. port only the generic Watch support required by the validated result;
+3. run tests/CI and preserve the known-good hardware regression anchor;
+4. open a draft PR against `nab138/isideload`;
+5. incorporate maintainer review;
+6. prepare the smaller iLoader integration against the backend shape under review;
+7. open the matching draft PR against `nab138/iloader`.
 
 No upstream merge or release is implied by this repository.
 
