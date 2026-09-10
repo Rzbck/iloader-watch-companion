@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Official iLoader issues
+    url: https://github.com/nab138/iloader/issues
+    about: Use this for issues that clearly belong to the upstream iLoader application.
+  - name: Official isideload issues
+    url: https://github.com/nab138/isideload/issues
+    about: Use this for issues that clearly belong to the upstream isideload library.
